@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: fruits-and-vegges-scan-ai
+    runtime: python
+    plan: free
+    rootDir: Fruits-and-Vegetables-Image-Recognition-Project
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.address 0.0.0.0 --server.port $PORT
+    healthCheckPath: /_stcore/health
+    domains:
+      - www.fruitsandveg.com
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.11
