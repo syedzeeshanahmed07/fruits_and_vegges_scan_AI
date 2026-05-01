@@ -1,0 +1,1 @@
+-r Fruits-and-Vegetables-Image-Recognition-Project/requirements.txt
